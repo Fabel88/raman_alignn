@@ -1,0 +1,17 @@
+# Data
+data/ramandb.json
+alignn_dataset/structures/
+alignn_dataset/bins_50/structures/
+alignn_dataset/bins_500/structures/
+
+# Large run files
+runs/*/checkpoint_epoch_*.pt
+runs/*/eval/*.npz
+
+# Python
+__pycache__/
+*.pyc
+*.log
+
+# Windows
+*.Identifier

@@ -1,0 +1,39 @@
+INFO  Input:   data/ramandb.json
+INFO  Output:  alignn_dataset/bins_500
+INFO  Bins:    500  (50–1000 cm⁻¹)
+INFO  FWHM:    10.0 cm⁻¹
+INFO  Loading data/ramandb.json ...
+INFO  Loaded 5099 entries
+INFO  
+Processed: 5092  |  Skipped: 7
+INFO  Wrote id_prop.csv  (5092 entries)
+INFO  Wrote metadata.csv
+INFO  Skip reasons:
+INFO    no_modes_in_window                       7
+INFO  Stratifying split by crystal system
+INFO     train: 4,073 entries
+INFO       val:   509 entries
+INFO      test:   510 entries
+INFO  
+=======================================================
+DONE
+  id_prop.csv   : 5092 entries
+  structures/   : 5092 POSCAR files
+  train         : 4073
+  val           : 509
+  test          : 510
+
+Spectrum config:
+  n_bins        = 500
+  wn_min        = 50.0 cm⁻¹
+  wn_max        = 1000.0 cm⁻¹
+  lineshape     = Lorentzian  FWHM=10.0 cm⁻¹
+  activity      = computed from raman_tensor  (I = 45a² + 7b²)
+
+Next:
+  python 03_train_alignn.py \
+      --data_dir alignn_dataset/bins_500 \
+      --config   alignn_raman_config_local.json \
+      --test_mode
+=======================================================
+

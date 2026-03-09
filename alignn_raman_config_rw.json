@@ -1,0 +1,63 @@
+{
+  "_comment": "Redwing config — follows Gurunathan et al. 2022 architecture exactly",
+  "_changes_from_local": [
+    "alignn_layers: 4 -> 6  (paper: 6 ALIGNN update layers)",
+    "gcn_layers:    4 -> 6  (paper: 6 edge-gated GCN layers)",
+    "hidden_features: unchanged at 256",
+    "max_neighbors: 12 -> 20  (paper: 20 nearest neighbors — most impactful change)",
+    "epochs: 50 -> 600",
+    "batch_size: 32 -> 64",
+    "loss: MSE -> MSE + 0.2 * cosine  (our addition over paper baseline)",
+    "scheduler: StepLR -> CosineAnnealingWarmRestarts(T_0=100, T_mult=2)",
+    "added: gradient clipping, mixed precision, periodic checkpoints, cosine sim logging"
+  ],
+
+  "model": {
+    "name": "alignn",
+    "alignn_layers": 6,
+    "gcn_layers": 6,
+    "atom_input_features": 92,
+    "edge_input_features": 80,
+    "triplet_input_features": 40,
+    "embedding_features": 64,
+    "hidden_features": 256,
+    "output_features": 100,
+    "link": "identity",
+    "zero_inflated": false,
+    "classification": false
+  },
+
+  "training": {
+    "epochs": 600,
+    "batch_size": 64,
+    "learning_rate": 1e-3,
+    "weight_decay": 1e-5,
+
+    "scheduler": "cosine_warm_restarts",
+    "scheduler_T0": 100,
+    "scheduler_T_mult": 2,
+    "scheduler_eta_min": 1e-7,
+
+    "loss": "mse_cosine",
+    "cosine_loss_weight": 0.2,
+
+    "grad_clip_norm": 1.0,
+    "mixed_precision": true,
+
+    "checkpoint_every_n_epochs": 50,
+    "frequency_weighted_sampling": true
+  },
+
+  "graph": {
+    "cutoff": 8.0,
+    "max_neighbors": 20,
+    "atom_features": "cgcnn",
+    "use_canonize": true
+  },
+
+  "data": {
+    "n_bins": 100,
+    "wn_min": 50.0,
+    "wn_max": 1000.0
+  }
+}

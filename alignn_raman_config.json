@@ -1,0 +1,22 @@
+{
+  "model": {
+    "name": "alignn",
+    "alignn_layers": 6,
+    "gcn_layers": 6,
+    "hidden_features": 256,
+    "output_features": 100,
+    "link": "identity",
+    "classification": false,
+    "atom_input_features": 92,
+    "edge_input_features": 80,
+    "triplet_input_features": 40
+  },
+  "training": {
+    "epochs": 600,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-5,
+    "num_workers": 8,
+    "save_interval": 50
+  }
+}
