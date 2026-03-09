@@ -1,0 +1,26 @@
+2026-03-07 14:20:20,051  INFO  Output dir:  runs/alignn_raman_20260307_142020
+2026-03-07 14:20:20,162  INFO  CUDA:        True
+2026-03-07 14:20:20,203  INFO  GPU:         NVIDIA GeForce RTX 4060 Laptop GPU
+2026-03-07 14:20:20,203  INFO  VRAM:        8.6 GB
+2026-03-07 14:20:22,138  WARNING  Config not found at setup/alignn_raman_config_local.json — using defaults
+2026-03-07 14:20:22,138  INFO  TEST MODE — 5 epochs, batch_size=8, 50 samples
+2026-03-07 14:20:22,139  INFO  Model:  alignn_layers=6  gcn_layers=6  hidden=256  output=100
+2026-03-07 14:20:22,139  INFO  Train:  epochs=5  batch=8  lr=0.001
+2026-03-07 14:20:22,246  INFO    [train.txt] 50 entries
+2026-03-07 14:20:22,319  INFO    [val.txt] 50 entries
+2026-03-07 14:20:22,319  INFO  Train batches: 7  |  Val batches: 7
+2026-03-07 14:20:22,603  INFO  Parameters: 6,032,100
+2026-03-07 14:20:22,842  INFO  
+=======================================================
+Starting — 5 epochs
+=======================================================
+2026-03-07 14:20:26,246  INFO  Epoch    1/5  train=1.12085  val=0.34711  lr=9.15e-04 ★
+2026-03-07 14:20:26,680  INFO    ★ New best  val_mae=0.34711
+2026-03-07 14:20:29,021  INFO  Epoch    2/5  train=0.74422  val=0.37852  lr=6.57e-04
+2026-03-07 14:20:32,467  INFO  Epoch    3/5  train=0.57709  val=0.37249  lr=3.32e-04
+2026-03-07 14:20:34,815  INFO  Epoch    4/5  train=0.44826  val=0.35081  lr=7.82e-05
+2026-03-07 14:20:37,196  INFO  Epoch    5/5  train=0.35250  val=0.34646  lr=2.23e-06 ★
+2026-03-07 14:20:37,739  INFO    ★ New best  val_mae=0.34646
+2026-03-07 14:20:38,029  INFO  
+Done. Best val MAE: 0.34646
+2026-03-07 14:20:38,029  INFO  Best model: runs/alignn_raman_20260307_142020/best_model.pt

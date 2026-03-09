@@ -12,7 +12,6 @@ runs/*/best_model.pt
 # Python
 __pycache__/
 *.pyc
-*.log
 
 # Windows
 *.Identifier

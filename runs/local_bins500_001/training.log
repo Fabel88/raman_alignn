@@ -1,0 +1,95 @@
+2026-03-08 19:29:34,133  INFO  Output dir:  runs/local_bins500_001
+2026-03-08 19:29:34,264  INFO  CUDA:        True
+2026-03-08 19:29:34,306  INFO  GPU:         NVIDIA GeForce RTX 4060 Laptop GPU
+2026-03-08 19:29:34,306  INFO  VRAM:        8.6 GB
+2026-03-08 19:29:36,497  INFO  Loaded config: alignn_raman_config_local_500bins.json
+2026-03-08 19:29:36,498  INFO  Model:  alignn_layers=4  gcn_layers=4  hidden=256  output=500
+2026-03-08 19:29:36,498  INFO  Train:  epochs=50  batch=32  lr=0.001
+2026-03-08 19:29:37,431  INFO    [train.txt] 4073 entries
+2026-03-08 19:29:37,836  INFO    [val.txt] 509 entries
+2026-03-08 19:29:37,837  INFO  Train batches: 128  |  Val batches: 16
+2026-03-08 19:29:38,202  INFO  Parameters: 4,154,996
+2026-03-08 19:29:38,451  INFO  
+=======================================================
+Starting — 50 epochs
+=======================================================
+2026-03-08 19:30:09,168  INFO  Epoch    1/50  train=0.41530  val=0.15425  lr=3.73e-04 ★
+2026-03-08 19:30:09,442  INFO    ★ New best  val_mae=0.15425
+2026-03-08 19:30:40,910  INFO  Epoch    2/50  train=0.09920  val=0.08679  lr=9.11e-04 ★
+2026-03-08 19:30:41,182  INFO    ★ New best  val_mae=0.08679
+2026-03-08 19:31:11,974  INFO  Epoch    3/50  train=0.07214  val=0.06521  lr=1.00e-03 ★
+2026-03-08 19:31:11,073  INFO    ★ New best  val_mae=0.06521
+2026-03-08 19:31:45,039  INFO  Epoch    4/50  train=0.06314  val=0.05848  lr=9.98e-04 ★
+2026-03-08 19:31:45,315  INFO    ★ New best  val_mae=0.05848
+2026-03-08 19:32:13,797  INFO  Epoch    5/50  train=0.05705  val=0.05626  lr=9.93e-04 ★
+2026-03-08 19:32:14,071  INFO    ★ New best  val_mae=0.05626
+2026-03-08 19:32:43,796  INFO  Epoch    6/50  train=0.05380  val=0.05396  lr=9.87e-04 ★
+2026-03-08 19:32:44,071  INFO    ★ New best  val_mae=0.05396
+2026-03-08 19:33:12,681  INFO  Epoch    7/50  train=0.05104  val=0.05049  lr=9.78e-04 ★
+2026-03-08 19:33:12,945  INFO    ★ New best  val_mae=0.05049
+2026-03-08 19:33:41,667  INFO  Epoch    8/50  train=0.04923  val=0.05167  lr=9.67e-04
+2026-03-08 19:34:10,552  INFO  Epoch    9/50  train=0.04720  val=0.04773  lr=9.54e-04 ★
+2026-03-08 19:34:10,820  INFO    ★ New best  val_mae=0.04773
+2026-03-08 19:34:41,355  INFO  Epoch   10/50  train=0.04620  val=0.05079  lr=9.40e-04
+2026-03-08 19:35:11,454  INFO  Epoch   11/50  train=0.04497  val=0.04276  lr=9.23e-04 ★
+2026-03-08 19:35:11,721  INFO    ★ New best  val_mae=0.04276
+2026-03-08 19:35:41,452  INFO  Epoch   12/50  train=0.04389  val=0.04378  lr=9.04e-04
+2026-03-08 19:36:11,189  INFO  Epoch   13/50  train=0.04256  val=0.04238  lr=8.84e-04 ★
+2026-03-08 19:36:11,452  INFO    ★ New best  val_mae=0.04238
+2026-03-08 19:36:42,944  INFO  Epoch   14/50  train=0.04169  val=0.04180  lr=8.62e-04 ★
+2026-03-08 19:36:43,213  INFO    ★ New best  val_mae=0.04180
+2026-03-08 19:37:12,270  INFO  Epoch   15/50  train=0.04134  val=0.03914  lr=8.38e-04 ★
+2026-03-08 19:37:12,533  INFO    ★ New best  val_mae=0.03914
+2026-03-08 19:37:41,690  INFO  Epoch   16/50  train=0.04061  val=0.04134  lr=8.13e-04
+2026-03-08 19:38:10,977  INFO  Epoch   17/50  train=0.04037  val=0.04200  lr=7.87e-04
+2026-03-08 19:38:43,427  INFO  Epoch   18/50  train=0.03907  val=0.04199  lr=7.59e-04
+2026-03-08 19:39:13,603  INFO  Epoch   19/50  train=0.03882  val=0.04004  lr=7.30e-04
+2026-03-08 19:39:42,672  INFO  Epoch   20/50  train=0.03810  val=0.03977  lr=7.01e-04
+2026-03-08 19:40:12,397  INFO  Epoch   21/50  train=0.03866  val=0.03854  lr=6.70e-04 ★
+2026-03-08 19:40:12,678  INFO    ★ New best  val_mae=0.03854
+2026-03-08 19:40:43,497  INFO  Epoch   22/50  train=0.03721  val=0.03734  lr=6.38e-04 ★
+2026-03-08 19:40:43,757  INFO    ★ New best  val_mae=0.03734
+2026-03-08 19:41:13,975  INFO  Epoch   23/50  train=0.03668  val=0.03761  lr=6.06e-04
+2026-03-08 19:41:42,883  INFO  Epoch   24/50  train=0.03661  val=0.03591  lr=5.74e-04 ★
+2026-03-08 19:41:43,148  INFO    ★ New best  val_mae=0.03591
+2026-03-08 19:42:12,385  INFO  Epoch   25/50  train=0.03584  val=0.03558  lr=5.41e-04 ★
+2026-03-08 19:42:12,649  INFO    ★ New best  val_mae=0.03558
+2026-03-08 19:42:42,176  INFO  Epoch   26/50  train=0.03543  val=0.03514  lr=5.08e-04 ★
+2026-03-08 19:42:42,442  INFO    ★ New best  val_mae=0.03514
+2026-03-08 19:43:12,039  INFO  Epoch   27/50  train=0.03486  val=0.03972  lr=4.75e-04
+2026-03-08 19:43:41,532  INFO  Epoch   28/50  train=0.03469  val=0.03596  lr=4.42e-04
+2026-03-08 19:44:10,615  INFO  Epoch   29/50  train=0.03422  val=0.03610  lr=4.09e-04
+2026-03-08 19:44:41,066  INFO  Epoch   30/50  train=0.03346  val=0.03789  lr=3.77e-04
+2026-03-08 19:45:12,581  INFO  Epoch   31/50  train=0.03326  val=0.03443  lr=3.45e-04 ★
+2026-03-08 19:45:12,848  INFO    ★ New best  val_mae=0.03443
+2026-03-08 19:45:43,172  INFO  Epoch   32/50  train=0.03239  val=0.03541  lr=3.14e-04
+2026-03-08 19:46:13,574  INFO  Epoch   33/50  train=0.03243  val=0.03440  lr=2.84e-04 ★
+2026-03-08 19:46:13,839  INFO    ★ New best  val_mae=0.03440
+2026-03-08 19:46:42,527  INFO  Epoch   34/50  train=0.03200  val=0.03618  lr=2.55e-04
+2026-03-08 19:47:11,877  INFO  Epoch   35/50  train=0.03128  val=0.03297  lr=2.26e-04 ★
+2026-03-08 19:47:12,148  INFO    ★ New best  val_mae=0.03297
+2026-03-08 19:47:41,443  INFO  Epoch   36/50  train=0.03119  val=0.03320  lr=1.99e-04
+2026-03-08 19:48:10,358  INFO  Epoch   37/50  train=0.03065  val=0.03330  lr=1.74e-04
+2026-03-08 19:48:39,269  INFO  Epoch   38/50  train=0.03022  val=0.03272  lr=1.49e-04 ★
+2026-03-08 19:48:39,550  INFO    ★ New best  val_mae=0.03272
+2026-03-08 19:49:08,760  INFO  Epoch   39/50  train=0.02981  val=0.03243  lr=1.26e-04 ★
+2026-03-08 19:49:09,040  INFO    ★ New best  val_mae=0.03243
+2026-03-08 19:49:38,547  INFO  Epoch   40/50  train=0.02962  val=0.03193  lr=1.05e-04 ★
+2026-03-08 19:49:38,829  INFO    ★ New best  val_mae=0.03193
+2026-03-08 19:50:09,327  INFO  Epoch   41/50  train=0.02908  val=0.03162  lr=8.59e-05 ★
+2026-03-08 19:50:09,596  INFO    ★ New best  val_mae=0.03162
+2026-03-08 19:50:38,650  INFO  Epoch   42/50  train=0.02894  val=0.03169  lr=6.82e-05
+2026-03-08 19:51:07,940  INFO  Epoch   43/50  train=0.02877  val=0.03187  lr=5.25e-05
+2026-03-08 19:51:38,718  INFO  Epoch   44/50  train=0.02858  val=0.03129  lr=3.88e-05 ★
+2026-03-08 19:51:39,004  INFO    ★ New best  val_mae=0.03129
+2026-03-08 19:52:08,020  INFO  Epoch   45/50  train=0.02830  val=0.03101  lr=2.70e-05 ★
+2026-03-08 19:52:08,306  INFO    ★ New best  val_mae=0.03101
+2026-03-08 19:52:37,523  INFO  Epoch   46/50  train=0.02818  val=0.03111  lr=1.73e-05
+2026-03-08 19:53:06,613  INFO  Epoch   47/50  train=0.02800  val=0.03121  lr=9.76e-06
+2026-03-08 19:53:35,306  INFO  Epoch   48/50  train=0.02794  val=0.03087  lr=4.34e-06 ★
+2026-03-08 19:53:35,588  INFO    ★ New best  val_mae=0.03087
+2026-03-08 19:54:04,898  INFO  Epoch   49/50  train=0.02790  val=0.03100  lr=1.08e-06
+2026-03-08 19:54:34,176  INFO  Epoch   50/50  train=0.02780  val=0.03089  lr=4.07e-09
+2026-03-08 19:54:34,763  INFO  
+Done. Best val MAE: 0.03087
+2026-03-08 19:54:34,763  INFO  Best model: runs/local_bins500_001/best_model.pt
