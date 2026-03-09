@@ -7,6 +7,7 @@ alignn_dataset/bins_500/structures/
 # Large run files
 runs/*/checkpoint_epoch_*.pt
 runs/*/eval/*.npz
+runs/*/best_model.pt
 
 # Python
 __pycache__/
