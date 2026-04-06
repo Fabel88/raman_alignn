@@ -15,3 +15,5 @@ __pycache__/
 
 # Windows
 *.Identifier
+jae/checkpoint-888/adapter_model.safetensors
+jae/checkpoint-888/optimizer.pt
