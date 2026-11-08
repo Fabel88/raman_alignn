@@ -4,7 +4,7 @@ This folder holds the data and models behind the published results of
 
 > F. M. Abel, J. Lee, C. R. Campbell & K. Choudhary, "RamanGPT maps bidirectionally between crystal structures and Raman spectra of inorganic materials", *Scientific Reports* (2026). https://doi.org/10.1038/s41598-026-79781-8
 
-All numbers reported in the paper were produced from these files. The training code is in [atomgptlab/atomgpt](https://github.com/atomgptlab/atomgpt) (inverse model) and [atomgptlab/alignn](https://github.com/atomgptlab/alignn) (forward model), and the web application runs at https://atomgpt.org/raman.
+The paper's main forward and inverse results were produced with these files. The models from the architecture sweep, the seed repeats and the formula-only ablation are not included. The training code is in [atomgptlab/atomgpt](https://github.com/atomgptlab/atomgpt) (inverse model) and [atomgptlab/alignn](https://github.com/atomgptlab/alignn) (forward model), and the web application runs at https://atomgpt.org/raman.
 
 ## Older files in this repository use mispaired Raman tensors
 
@@ -14,7 +14,7 @@ The Computational Raman Database (CRD) stores the Raman tensors of 1,210 of thes
 
 Structures and Raman tensors come from CRD v1.0.1 (M. Bagheri & H.-P. Komsa, *Sci. Data* **10**, 80 (2023), https://github.com/mbagheri20/ramandb). The spectra here pair each tensor with its own mode and also include the corrected tensors that CRD v1.0.1 provides for 33 materials. Compared with the earlier data, 1,243 of the 5,092 forward targets changed (1,210 from the pairing fix and 33 from the v1.0.1 update). The inverse prompts were rebuilt from the same corrected modes.
 
-Each spectrum is the orientation-averaged Raman activity, I = 45a² + 7γ², summed over all modes. Each mode is broadened with a Lorentzian of 3 cm⁻¹ full width at half maximum, and the result is sampled at 200 points from 50 to 1000 cm⁻¹ (`numpy.linspace(50, 1000, 200)`, 4.77 cm⁻¹ spacing) and normalized to a maximum of 1. These are activities, so they include no laser-wavelength or temperature factors.
+Each spectrum is the orientation-averaged Raman activity, I = 45a² + 7γ², summed over all Raman-active modes above 5 cm⁻¹. Each mode is broadened with a Lorentzian of 3 cm⁻¹ full width at half maximum, and the result is sampled at 200 points from 50 to 1000 cm⁻¹ (`numpy.linspace(50, 1000, 200)`, 4.77 cm⁻¹ spacing) and normalized to a maximum of 1. These are activities, so they include no laser-wavelength or temperature factors.
 
 ## Contents
 
@@ -35,8 +35,8 @@ ramangpt_release/
 
 - `forward/data/id_prop.csv` has one row per structure: the structure file name followed by the 200 spectrum values.
 - `forward/ids_train_val_test.json` gives the split used in the paper. The structures were split in file order, and one structure (mp-540574) is in none of the three sets.
-- `forward/model/` is the production model from the paper. It is an ALIGNN model with 6 ALIGNN layers and 6 edge-gated graph convolution layers, 256 hidden features, an 8.0 Å cutoff with 12 neighbors and a 200-value output, trained for 100 epochs with an L1 loss. It uses the pure-PyTorch ALIGNN (`alignn_atomwise_pure`) in atomgptlab/alignn and loads with `strict=True`.
-- Test-set results (509 materials): the mean cosine similarity over spectrally active bins (target above 0.001) is 0.390, 53.8% of materials score 0.354 or higher, and the mean all-bin MAE is 0.017. If you regenerate the predictions from the structures, expect 53.4% instead of 53.8%. In 110 test structures the 12th and 13th neighbors are equally distant, so the neighbor list can differ from the one behind the paper's stored predictions. The mean stays at 0.390.
+- `forward/model/` is the production model from the paper. It is an ALIGNN model with 6 ALIGNN layers and 6 edge-gated graph convolution layers, 256 hidden features, an 8.0 Å cutoff with 12 neighbors and a 200-value output, trained for 100 epochs with an L1 loss. It uses the pure-PyTorch ALIGNN model (`alignn_atomwise_pure`) on the `develop` branch of atomgptlab/alignn, and the weights load there with `strict=True`.
+- Test-set results (509 materials): the mean cosine similarity over spectrally active bins (target above 0.001) is 0.390, 53.8% of materials score 0.354 or higher, and the mean all-bin MAE is 0.017. These come from the test predictions saved during training. Rerunning the model on the structures reproduces those predictions to within 1e-5, except for 301 structures in which an atom has two neighbors tied in distance at the 12-neighbor limit. For those the neighbor list can be built differently, which moves the fraction at 0.354 or higher from 53.8% to 53.4%. The mean cosine similarity stays at 0.390 and the MAE at 0.017.
 
 ### Inverse model (spectrum and formula to structure)
 

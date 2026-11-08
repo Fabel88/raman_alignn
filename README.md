@@ -1,6 +1,6 @@
 # ALIGNN Raman Spectrum Prediction
 
-> **RamanGPT paper data and models.** The corrected dataset and trained models behind *RamanGPT maps bidirectionally between crystal structures and Raman spectra of inorganic materials* (Scientific Reports, 2026) are in [`ramangpt_release/`](ramangpt_release/). The older data and runs in this repository were built from a database export that pairs the Raman tensors of 1,210 materials with the wrong phonon modes, so they do not reproduce the published results. See [`ramangpt_release/README.md`](ramangpt_release/README.md) for details.
+> **RamanGPT paper data and models.** The corrected dataset and trained models behind *RamanGPT maps bidirectionally between crystal structures and Raman spectra of inorganic materials* (Scientific Reports, 2026) are in [`ramangpt_release/`](ramangpt_release/). The older data and runs in this repository were built from a database export that lost the mode labels of the Raman tensors for 1,210 materials, so those tensors were paired with the wrong phonon modes and the older results do not reproduce the published ones. See [`ramangpt_release/README.md`](ramangpt_release/README.md) for details.
 
 Predicting Raman spectra of crystal structures using the **ALIGNN** (Atomistic Line Graph Neural Network) graph neural network. The model takes a crystal structure as input and outputs a normalized Raman spectrum as a multi-bin vector.
 
